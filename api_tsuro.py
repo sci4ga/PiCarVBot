@@ -8,6 +8,7 @@ from flask import make_response
 import logging
 import picar
 from picar import back_wheels, front_wheels
+from .camera import ball_tracker
 
 picar.setup()
 db_file = "/Users/andrewtsai/personal-projects/RobotTsuro/config"
@@ -42,3 +43,11 @@ def get_stop():
     bw_status = 0
 
     return make_response('Tsuro stop', 200)
+
+def track_ball():
+    ball_tracker.main()
+    return make_response('Ball tracking started', 200)
+
+def track_ball_stop():
+    ball_tracker.destroy()
+    return make_response('Ball tracking stopped', 200)

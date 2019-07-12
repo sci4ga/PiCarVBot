@@ -77,6 +77,26 @@ paths:
       responses:
         '200':
           description: Success - Tsuro program stopped
+  /tsuro/track_ball:
+    get:
+      operationId: api_tsuro.track_ball
+      tags:
+        - tsuro
+      summary: Start the ball tracking program
+      description: Returns 200
+      responses:
+        '200':
+          description: Success - Tsuro ball tracking started
+  /tsuro/track_ball_stop:
+    get:
+      operationId: api_tsuro.track_ball_stop
+      tags:
+        - tsuro
+      summary: Stop the ball tracking program
+      description: Returns 200
+      responses:
+        '200':
+          description: Success - Tsuro ball tracking stopped
 components:
   schemas:
     Info:
